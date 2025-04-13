@@ -1,0 +1,152 @@
+// variables
+$neutral-900: hsl(227, 75%, 14%);
+$neutral-800: hsl(226, 25%, 17%);
+$neutral-700: hsl(225, 23%, 24%);
+$neutral-600: hsl(226, 11%, 37%);
+$neutral-300: hsl(0, 0%, 78%);
+$neutral-200: hsl(217, 61%, 90%);
+$neutral-100: hsl(0, 0%, 93%);
+$neutral-0: hsl(200, 60%, 99%);
+
+$red-400: hsl(3, 86%, 64%);
+$red-500: hsl(3, 71%, 56%);
+$red-600: hsl(3, 77%, 44%);
+
+$light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+$dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+// imports and overrides
+@import "../node_modules/bootstrap/scss/functions";
+
+$secondary: $neutral-100;
+$primary: $red-400;
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules//bootstrap/scss/bootstrap.scss";
+
+// overrides and global settings
+.p-2 {
+  padding: 0.75rem !important;
+}
+
+p {
+  font-size: 16px;
+  font-family: url("../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf"),
+    url("../assets/fonts//NotoSans-VariableFont_wdth\,wght.ttf");
+  font-weight: 400, 500, 700;
+}
+
+body {
+  background: $light-gradient;
+  min-height: 100vh;
+}
+
+#switchCheckDefault {
+  height: 1.2rem !important;
+  width: 2.3rem !important;
+}
+
+// new classes
+
+.bg-neutral {
+  background-color: $neutral-0;
+}
+
+.max-page-width {
+  max-width: 1090px !important;
+}
+
+@include color-mode(dark) {
+  body {
+    background: $dark-gradient;
+  }
+
+  .bg-neutral {
+    background-color: $neutral-800 !important;
+  }
+
+  #main-logo path {
+    fill: $neutral-0;
+  }
+}
+
+// body button used in list top bar and list items itself
+
+.btn-body {
+  background-color: $neutral-0;
+
+  &:hover {
+    background-color: $red-400 !important;
+    transition: all 200ms;
+    color: $neutral-100;
+  }
+
+  &:focus {
+    background-color: $neutral-100;
+  }
+}
+
+.btn-body[data-selected="true"] {
+  background-color: $red-500 !important;
+  color: $neutral-100;
+}
+
+@include color-mode(dark) {
+  .btn-body {
+    background-color: $neutral-800;
+
+    &:hover {
+      color: $neutral-800;
+    }
+
+    &:focus {
+      background-color: $neutral-700;
+    }
+  }
+
+  .btn-body[data-selected="true"] {
+    color: $neutral-800;
+  }
+}
+
+// list filter button
+
+.btn-list-filter {
+  @extend .btn-body;
+
+  &:not([data-selected="true"]):hover {
+    background-color: $neutral-100 !important;
+    opacity: 0.8;
+    color: $neutral-900;
+  }
+}
+
+@include color-mode(dark) {
+  .btn-list-filter {
+    &:not([data-selected="true"]):hover {
+      background-color: $neutral-700 !important;
+      opacity: 0.8;
+      color: $neutral-0;
+    }
+  }
+}
+
+// navbar button with icon
+
+.btn-navbar {
+  background-color: $neutral-100;
+
+  &:focus {
+    background-color: $neutral-100;
+  }
+}
+
+@include color-mode(dark) {
+  .btn-navbar {
+    background-color: $neutral-700;
+  }
+}

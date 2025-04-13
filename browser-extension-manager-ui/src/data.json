@@ -1,0 +1,74 @@
+[
+  {
+    "logo": "logo-devlens",
+    "name": "DevLens",
+    "description": "Quickly inspect page layouts and visualize element boundaries.",
+    "isActive": true
+  },
+  {
+    "logo": "logo-style-spy",
+    "name": "StyleSpy",
+    "description": "Instantly analyze and copy CSS from any webpage element.",
+    "isActive": true
+  },
+  {
+    "logo": "logo-speed-boost",
+    "name": "SpeedBoost",
+    "description": "Optimizes browser resource usage to accelerate page loading.",
+    "isActive": false
+  },
+  {
+    "logo": "logo-json-wizard",
+    "name": "JSONWizard",
+    "description": "Formats, validates, and prettifies JSON responses in-browser.",
+    "isActive": true
+  },
+  {
+    "logo": "logo-tab-master-pro",
+    "name": "TabMaster Pro",
+    "description": "Organizes browser tabs into groups and sessions.",
+    "isActive": true
+  },
+  {
+    "logo": "logo-viewport-buddy",
+    "name": "ViewportBuddy",
+    "description": "Simulates various screen resolutions directly within the browser.",
+    "isActive": false
+  },
+  {
+    "logo": "logo-markup-notes",
+    "name": "Markup Notes",
+    "description": "Enables annotation and notes directly onto webpages for collaborative debugging.",
+    "isActive": true
+  },
+  {
+    "logo": "logo-grid-guides",
+    "name": "GridGuides",
+    "description": "Overlay customizable grids and alignment guides on any webpage.",
+    "isActive": false
+  },
+  {
+    "logo": "logo-palette-picker",
+    "name": "Palette Picker",
+    "description": "Instantly extracts color palettes from any webpage.",
+    "isActive": true
+  },
+  {
+    "logo": "logo-link-checker",
+    "name": "LinkChecker",
+    "description": "Scans and highlights broken links on any page.",
+    "isActive": true
+  },
+  {
+    "logo": "logo-dom-snapshot",
+    "name": "DOM Snapshot",
+    "description": "Capture and export DOM structures quickly.",
+    "isActive": false
+  },
+  {
+    "logo": "logo-console-plus",
+    "name": "ConsolePlus",
+    "description": "Enhanced developer console with advanced filtering and logging.",
+    "isActive": true
+  }
+]
