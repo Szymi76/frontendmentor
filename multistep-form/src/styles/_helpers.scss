@@ -1,0 +1,138 @@
+@use "variables" as *;
+
+// spacing
+
+.p-sm {
+  padding: 0.25rem;
+}
+
+.p-md {
+  padding: 0.5rem;
+}
+
+.p-lg {
+  padding: 1rem;
+}
+
+.m-sm {
+  margin: 0.25rem;
+}
+
+.m-md {
+  margin: 0.5rem;
+}
+
+.m-lg {
+  margin: 1rem;
+}
+
+// layout
+
+.w-full {
+  width: 100%;
+}
+
+// flex
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.justify-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.gap-sm {
+  gap: 0.25rem;
+}
+.gap-md {
+  gap: 0.5rem;
+}
+.gap-lg {
+  gap: 1rem;
+}
+
+.gap-xl {
+  gap: 1.5rem;
+}
+
+// text
+
+.text-primary {
+  color: $primary;
+}
+
+.text-secondary {
+  color: $secondary;
+}
+
+.text-description {
+  color: $grey-500;
+}
+
+.font-bold {
+  font-weight: 800;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.font-lg {
+  font-size: large;
+}
+
+.font-xl {
+  font-size: x-large;
+}
+
+.font-2xl {
+  font-size: xx-large;
+}
+
+// colors
+
+.bg-blue-50 {
+  background-color: $blue-50;
+}
+.bg-blue-100 {
+  background-color: $blue-100;
+}
+
+// other
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $purple-200;
+}

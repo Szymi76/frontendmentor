@@ -1,0 +1,189 @@
+@use "variables" as *;
+
+.form-container {
+  max-width: 1000px;
+  height: 600px;
+  margin-inline: auto;
+  margin-top: 7rem;
+  display: flex;
+  background-color: $white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: map-get($shadows, "lg");
+
+  @media screen and (max-width: #{map-get($breakpoints, "mobile")}) {
+    height: auto;
+    margin-bottom: 7rem;
+    margin-inline: 1rem;
+  }
+
+  .form-container__steps-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 300px;
+    background-image: url("../assets/images/bg-sidebar-desktop.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0.5rem;
+    padding: 2rem;
+
+    @media screen and (max-width: #{map-get($breakpoints, "mobile")}) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: start;
+      width: 100%;
+      min-height: 200px;
+      border-radius: 0;
+      background-image: url("../assets/images/bg-sidebar-mobile.svg");
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .single-step-info {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+
+      .single-step-info__circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        border: 1px solid $white;
+        color: $white;
+
+        &[data-active="true"] {
+          background-color: $blue-200;
+          color: $primary;
+          border-color: transparent;
+        }
+      }
+
+      .single-step-info__text {
+        p {
+          color: $grey-500;
+          margin-bottom: 0.25rem;
+        }
+
+        h4 {
+          text-transform: uppercase;
+          font-weight: 700;
+          color: $white;
+        }
+
+        @media screen and (max-width: #{map-get($breakpoints, "mobile")}) {
+          display: none;
+        }
+      }
+    }
+  }
+  .form-container__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 3rem;
+    padding-top: 3rem;
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+
+    @media screen and (max-width: #{map-get($breakpoints, "mobile")}) {
+      padding-bottom: 3rem;
+      padding-inline: 0.5rem;
+    }
+
+    .form-container__form-wrapper__text {
+      h1 {
+        color: $primary;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        color: $grey-500;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .form-container__form {
+      flex: 1;
+    }
+
+    .form-container__bottom-nav {
+      display: flex;
+      justify-content: space-between;
+
+      @media screen and (max-width: #{map-get($breakpoints, "mobile")}) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: $white;
+        width: 100%;
+        padding: 1rem;
+        border-top: 1px solid $purple-200;
+      }
+    }
+  }
+}
+
+.second-step {
+  .second-step__buttons-wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: #{map-get($breakpoints, "mobile")}) {
+      flex-direction: column;
+    }
+  }
+
+  .second-step__pricing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 1rem;
+    background-color: $blue-50;
+    border-radius: 0.5rem;
+
+    p {
+      font-weight: 600;
+    }
+  }
+}
+
+.final-step {
+  .final-step__summary {
+    background-color: $blue-50;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .final-step__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+}
+
+.thank-you-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  padding: 1rem;
+  margin-inline: auto;
+  text-align: center;
+  line-height: 1.5rem;
+}

@@ -1,0 +1,200 @@
+@use "variables" as *;
+
+%buttons {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  font-size: large;
+  border: none;
+  border-radius: 0.5rem;
+  transition-duration: 125ms;
+  cursor: pointer;
+}
+
+%buttons-active {
+  transform: scale(0.95);
+}
+
+#{$buttons} {
+  @extend %buttons;
+
+  &:active {
+    @extend %buttons-active;
+  }
+
+  // primary
+  &.button-primary {
+    background-color: $primary;
+    color: $white;
+    outline-color: $primary;
+
+    &:active {
+      outline: 2px solid $primary;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: lighten($primary, 5%);
+    }
+  }
+
+  // secondary
+  &.button-secondary {
+    background-color: $secondary;
+    color: $white;
+    outline-color: $secondary;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: lighten($secondary, 10%);
+    }
+  }
+
+  // ghost
+  &.button-ghost {
+    background-color: transparent;
+    color: $grey-500;
+    outline-color: $grey-500;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $primary;
+    }
+  }
+}
+
+// button card
+
+.button-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 1.5rem 1rem;
+  border: 1px solid $purple-200;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition-duration: 150ms;
+  outline-color: $secondary;
+
+  @media screen and (max-width: #{map-get($breakpoints, "mobile")}) {
+    flex-direction: row;
+    justify-content: start;
+    gap: 1rem;
+  }
+
+  &[data-selected="true"] {
+    background-color: $blue-100;
+    border-color: $purple-600;
+  }
+
+  &:hover {
+    border-color: $purple-600;
+  }
+
+  &:active {
+    scale: 0.98;
+  }
+
+  img {
+    height: 40px;
+    width: 40px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    h4 {
+      color: $primary;
+      margin-bottom: 0.25rem;
+    }
+
+    p:nth-child(2) {
+      color: $grey-500;
+    }
+
+    p:nth-child(3) {
+      color: $primary;
+    }
+  }
+}
+
+// button card with checkbox
+
+.button-card-with-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid $purple-200;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition-duration: 150ms;
+  outline-color: $secondary;
+
+  &[data-checked="true"] {
+    background-color: $blue-100;
+    border-color: $purple-600;
+  }
+
+  &:hover {
+    border-color: $purple-600;
+  }
+
+  .button-card-with-checkbox__checkbox {
+    position: relative;
+    height: 30px;
+    width: 30px;
+
+    input {
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $purple-200;
+      border-radius: 0.25rem;
+      transition-duration: 100ms;
+
+      img {
+        height: 60%;
+        width: 60%;
+      }
+    }
+
+    :checked + span {
+      background-color: $secondary;
+    }
+  }
+
+  .button-card-with-checkbox__text {
+    h4 {
+      color: $primary;
+      margin-bottom: 0.25rem;
+    }
+    p {
+      color: $grey-500;
+    }
+  }
+
+  p {
+    color: $secondary;
+  }
+}

@@ -1,0 +1,110 @@
+@use "variables" as *;
+
+%inputs {
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  font-weight: 500;
+  font-size: medium;
+  border: 1px solid $purple-200;
+  border-radius: 0.5rem;
+  transition-duration: 125ms;
+  outline: none;
+}
+
+// input
+
+#{$inputs} {
+  @extend %inputs;
+
+  // input primary
+  &.input-primary {
+    &:hover {
+      border-color: $primary;
+      background-color: lighten($grey-500, 35%);
+    }
+
+    &:active,
+    &:focus {
+      border-color: $secondary;
+    }
+
+    &::placeholder {
+      color: lighten($grey-500, 10%);
+    }
+  }
+}
+
+// form input with label and error message
+
+#{$form-inputs} {
+  &[data-error="true"] {
+    p {
+      display: block;
+      color: $red-500;
+      font-weight: 500;
+    }
+
+    input {
+      border-color: $red-500;
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    display: none;
+  }
+
+  label {
+    color: $primary;
+  }
+}
+
+// switch
+.switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background-color: $primary;
+  border-radius: 1rem;
+  transition-duration: 150ms;
+  outline-color: $primary;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: lighten($primary, 5%);
+  }
+
+  input {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  input:checked + span {
+    left: 30px;
+  }
+
+  span {
+    position: absolute;
+    z-index: 1;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition-duration: 150ms;
+    height: 16px;
+    width: 16px;
+    border-radius: 100%;
+    background-color: $white;
+  }
+}
